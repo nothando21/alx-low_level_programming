@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main -Entry point
+ * main - Entry point
+ * Hello printf task 
  * Return 0 if successful
- * 
  */
 int main(void)
 {
