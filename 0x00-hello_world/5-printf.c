@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  * Hello printf task 
- * Return 0 if successful
+ * Return: Always 0 (success)
  */
 int main(void)
 {
