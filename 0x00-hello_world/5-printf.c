@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * Hello printf task 
+ * Hello printf task
  * Return: Always 0 (success)
  */
 int main(void)
