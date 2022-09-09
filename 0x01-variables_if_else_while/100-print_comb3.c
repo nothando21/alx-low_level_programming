@@ -9,18 +9,18 @@
 
 int main(void)
 {
-int a;
-int b;
+int digit1;
+int digit2;
 
-for (a = 1; a < 9; a++)
+for (digit1 = 0; digit1 < 9; digit1++)
 {
 
-for (b = a + 1; b < 10; b++)
+for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 {
-putchar(a);
-putchar(b);
+putchar(digit1);
+putchar(digit2);
 
-if (a != 8 || b != 9)
+if (digit1 != 8 || digit2 != 9)
 {
 putchar(',');
 putchar(' ');
