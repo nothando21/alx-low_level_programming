@@ -1,29 +1,26 @@
-#include <main.h>
+#include <stdio.h>
 
 /**
- * print_to_98 - prints every number from n to 98
- *
+ * print_to_98  - prints every number from n to 98
+ *		-seperated by a comma followed by a space.
  * @n: starting number
- *
  */
 
 void print_to_98(int n)
+{
+	if (n <= 98)
+{
+	while (n > 98)
+	
+		printf("%d, ", n--);
+	printf("%d\n",n);
+}
 
+else
 {
-		int i;
+	while (n < 98)
 
-			if (n <= 98)
-{
-for (i = n; i < 98; i++)
-{
-printf("%i, ", i);
+		printf("%d, ",n++);
+	printf("%d\n",n);
 }
-} else
-{
-for (i = n; i > 98; i--)
-{
-printf("%i, ", i);
-}
-}
-printf("98\n");
 }
