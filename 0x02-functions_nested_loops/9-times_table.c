@@ -23,7 +23,7 @@ void times_table(void)
 			
 			prod = i * j;
 			_putchar(',');
-			_putchar(' ')
+			_putchar(' ');
 				
 				if (prod >= 10)
 				{
