@@ -6,7 +6,7 @@
  *
  * return: value of the last digit
  */
-int print_last_digit(int);
+int print_last_digit(int)
 {
 	int last_digit n % 10
 		if (last_digit < 0)
