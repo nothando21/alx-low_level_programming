@@ -1,2 +1,2 @@
 int _putchar(char c);
-int _print_alphabet(char c); 
+int print_alphabet(char c); 
