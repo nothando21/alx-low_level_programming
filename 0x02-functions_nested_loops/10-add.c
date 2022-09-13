@@ -2,8 +2,8 @@
 
 /**
  * adds - add two intergers
- * @i: number 1
- * @j: number 2
+ * @i: number 1.
+ * @j: number 2.
  *
  * return: i + j
  */
