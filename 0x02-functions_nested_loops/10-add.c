@@ -2,11 +2,11 @@
 
 /**
  * adds - add two intergers
- * @i: nunber 1
+ * @i: number 1
  * @j: number 2
+ *
  * return: i + j
  */
-
 int add(int i, int j)
 {
 	int sum;
