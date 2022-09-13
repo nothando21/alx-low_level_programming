@@ -14,6 +14,7 @@ void times_table(void)
 	{
 		for (j = 0; j < 10; j++)
 		{
+
 			if (j == 0)
 			{
 				_putchar(48);
@@ -23,6 +24,7 @@ void times_table(void)
 			prod = i * j;
 			_putchar(',');
 			_putchar(' ')
+				
 				if (prod >= 10)
 				{
 					_putchar(prod / 10 + 48);
