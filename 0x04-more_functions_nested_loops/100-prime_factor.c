@@ -8,7 +8,7 @@
 int main(void)
 {
 	int inc;
-	long num = 612852475143;
+	long number = 612852475143;
 
 	while (inc++ < number / 2)
 	{
