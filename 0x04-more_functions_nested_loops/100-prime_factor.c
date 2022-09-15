@@ -8,17 +8,23 @@
  */
 int main(void)
 {
-	int c;
+	int inc;
 	long num = 612852475143;
 
-	for (c = (int) sqrt(num); c > 2; c++)
+	while (inc++ < number / 2)
+
 	{
-		if (num % c == 0)
+		if (number % inc == 0)
 		{
-			printf("%d\n", c);
-			break;
+			number /= 2;
+			continue;
+		}
+		for (inc = 3, inc < number / 2; inc += 2)
+		{
+			if (number % inc == 0)
+				number /= inc;
 		}
 	}
-
-	return (0);
+			printf("%d\n", number);
+			return (0);
 }
