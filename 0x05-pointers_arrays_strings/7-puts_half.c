@@ -2,6 +2,7 @@
 
 /**
  * puts_half -  Prints half a string
+ * new line following
  * @str: input
  */
 void puts_half(char *str);
