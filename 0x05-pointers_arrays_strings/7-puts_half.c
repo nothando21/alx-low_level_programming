@@ -5,7 +5,7 @@
  * new line following
  * @str: input
  */
-void puts_half(char *str);
+void puts_half(char *str)
 {
 	int i, j;
 
