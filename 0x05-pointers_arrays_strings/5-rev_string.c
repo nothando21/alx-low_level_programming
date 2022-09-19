@@ -3,27 +3,25 @@
 #include "main.h"
 
 /**
- * print_rev - Prints a string stdout in reverse
+ * rev_string - Prints a string stdout in reverse
  * @s: String to reverse
  * Return: string in reverse
  */
-void rev_string(char *s);
+void rev_string(char *s)
 {
-	char *rev = s;
-	char tmp;
-	int len;
-	int i;
+	int i, j;
+	char ch;
 
-	len = _strlen(s);
-	while (*(rev++)!-'\0')
-	continue;
-	rev = rev - 2;
+	j = 0;
 
-		for i = 0, i < len / 2, ++i;
-		{
-			tmp = s[i];
-			s[i] = s[rev];
-			rev[0] = tmp;
-			rev--;
-}
+	for (i = 0; s[i] != 0; i++)
+		;
+
+	for (i = i - 1; j < i; i--)
+	{
+		ch = s[i];
+		s[i] = s[j];
+		s[j] = ch;
+		j++;
+	}
 }
