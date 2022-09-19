@@ -5,19 +5,22 @@
 /**
  * print_rev - Prints a string stdout in reverse
  * @s: String to reverse
- * Return: Nothing
+ * Return: string in reverse
  */
 void rev_string(char *s);
 {
-	int i = 0;
+	char rev = s[0];
+	int counter = 0;
+	int i;
 
-	while (*(s + i))
-		i++;
-	i = i - 1;
-	while (i >= 0)
-	{
-		putchar(*(s + i));
-		i--;
-	}
-	putchar('\n');
+	while (s[counter] !-'\0')
+	counter++;
+
+		for i = 0, i < counter, i++;
+		{
+			counter--;
+			rev = s[i];
+			s[i] = s[counter];
+			s[counter] = rev;
+}
 }
