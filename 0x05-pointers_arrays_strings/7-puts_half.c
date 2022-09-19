@@ -3,23 +3,22 @@
 /**
  * puts_half -  Prints half a string
  * @str: input
- * Return: half the input
+ * Return: second half the input
  */
 void puts_half(char *str);
 {
-	int len = 0;
+	int j, i = 0;
 
-	while (*str != '\0')
+	while (*(str + 1))
+		i++;
+	j = i / 2;
+	if (i % 2)
+		j += 1;
+	while
+		(j < i)
 	{
-		len++;
-		str++;
-	}
-
-	str -= (len / 2)
-		while (str != '\0')
-		{
-			putchar(*str);
-				str++;
+			putchar(*(str + j));
+				j++;
 		}
 	putchar('\n')
 }
