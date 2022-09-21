@@ -13,6 +13,8 @@ int _strcmp(char *s1, char *s2);
 void reverse_array(int *a, int n);
 char *string_toupper(char *);
 char *cap_string(char *);
-int _putchar(int);
+int _putchar(int)
+char *rot13(char *);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 
 #endif /*MAIN_H*/
