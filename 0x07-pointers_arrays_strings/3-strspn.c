@@ -6,6 +6,7 @@
  * @s: The string to search through
  * @accept: The string to search from
  * Return: The number of bytes in the initial segment of s
+ * consists of bytes from accept
  */
 
 unsigned int _strspn(char *s, char *accept)
