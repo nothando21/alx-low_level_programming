@@ -9,13 +9,13 @@
  * @n: bytes to be filled
  * Return: The pointer to memory n
  */
-void *_memset(void *s, int b, size_t n);
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int index;
-	unsigned char *memory = s, value = b;
-	
-	for (index = 0; index < n;index++)
-		memory[index] = value;
+	unsigned int i;
 
-		return (memory);
+	for (i = 0; n > 0 ; i++, n--)
+	{
+		s[i] = b;
+
+		return (s);
 }

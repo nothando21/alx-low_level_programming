@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_cheeseboard - Prints cheeseboard
- * @a: The cheeseboard to be printed
+ * print_chessboard - Prints chessboard
+ * @a: The chessboard to be printed
  */
-void print_cheeseboard(char (*a)[8])
+void print_chessboard(char (*a)[8])
 {
 	int indx1, indx2;
 
@@ -14,5 +14,5 @@ void print_cheeseboard(char (*a)[8])
 				_putchar(a[indx1][indx2]);
 
 				_putchar('\n')
-				}
-				}
+			}
+		}
