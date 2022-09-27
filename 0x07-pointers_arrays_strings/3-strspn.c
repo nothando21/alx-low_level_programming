@@ -11,30 +11,24 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j, matches;
+	unsigned int bytes = 0;
+	int i;
 
-	if (s[0] == '\0' || accept[0] == '\0')
-		return (0);
-
-	/* loop through the s array */
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		/* break out of this loop once matches has value */
-		if (matches != i)
-			break;
-
-		/* loop through the accept array */
-		for (j = 0; accept[j] != '\0'; j++)
+		for (i = 0; accept[i]; i++)
 		{
-			/* if characters match */
-			if (s[i] == accept[j])
+			if (*s == accept[i])
 			{
-				/* count it */
-				matches++;
-				/* then break out of accept array */
+				bytes++;
 				break;
 			}
+
+			else if (accept[i + 1] == '\0')
+				return (bytes);
 		}
+		s++;
 	}
-	return (matches);
+
+	return (bytes);
 }
