@@ -1,86 +1,113 @@
-#include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "variadic_functions.h"
 
 /**
- * _printchar - function to print character
- * @list: list being passed
- * Return: void
+ * print_i - This function prints integers
+ * @list: List of arguments
+ * @sep: Separator
  */
 
-void _printchar(va_list list)
+void print_i(va_list list, char *sep)
 {
-	printf("%c", va_arg(list, int));
+	printf("%s%d", sep, va_arg(list, int));
 }
 
 /**
- * _printstr - function to print string
- * @list: list being passed
- * Return: void
+ * print_c - This function prints characters
+ * @list: Character arguments
+ * @sep: Separator
  */
 
-void _printstr(va_list list)
+void print_c(va_list list, char *sep)
+{
+	printf("%s%c", sep, va_arg(list, int));
+}
+
+/**
+ * print_s - This function prints strings
+ * @list: List of arguments
+ * @sep: Separator
+ */
+
+void print_s(va_list list, char *sep)
 {
 	char *s;
 
+	/* assign string to pointer */
+
 	s = va_arg(list, char *);
-	if (s == 0)
-		s = "(nil)";
-	printf("%s", s);
+
+	if (s == NULL)
+	s = "(nil)";
+	printf("%s%s", sep, s);
 }
 
 /**
- * _printfloat - function to print float
- * @list: list being passed
- * Return: void
+ * print_f - This function prints floats
+ * @list: List of arguments
+ * @sep: Separator
  */
 
-void _printfloat(va_list list)
+void print_f(va_list list, char *sep)
 {
-	printf("%f", va_arg(list, double));
+	printf("%s%f", sep, va_arg(list, double));
 }
 
 /**
- * _printint - function to print int
- * @list: list being passed
- * Return: void
- */
-
-void _printint(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
-
-/**
- * print_all - function to print various arguments
- * @format: constant char argument
- * Return: Void
+ * print_all - This function prints out all types of specifiers
+ * @format: The list of variable arguments
  */
 
 void print_all(const char * const format, ...)
 {
-	unsigned int a = 0, b = 0;
-	va_list list;
-	char *str = "";
+	va_list ap;
+	char *sep;
+	int i, j;
 
-	what_format frmt[] = {
-		{"c", _printchar},
-		{"f", _printfloat},
-		{"s", _printstr},
-		{"i", _printint},
+	/* store format specifier types in an array */
+
+	fm_t fm[] = {
+	{"c", print_c},
+	{"i", print_i},
+	{"f", print_f},
+	{"s", print_s},
+	{NULL, NULL}
 	};
-	va_start(list, format);
-	while (format != 0 && format[a / 4] != 0)
+
+
+	/* initialize list */
+
+	va_start(ap, format);
+
+	/* initialize variables */
+
+	i = 0;
+	sep = "";
+
+	/* loop through format */
+
+	while (format != NULL && format[i] != '\0')
 	{
-		b = a % 4;
-		if (frmt[b].type[0] == format[a / 4])
-		{
-			printf("%s", str);
-			frmt[b].f(list);
-			str = ", ";
-		}
-		a++;
+	j = 0;
+	while (j < 4)
+	{
+	if (format[i] == *(fm[j]).fm)
+	{
+	fm[j].p(ap, sep);
+	sep = ", ";
 	}
+	j++;
+	}
+	i++;
+	}
+
+
+	/* add newline */
+
 	printf("\n");
-	va_end(list);
-}
+
+	/* free memory */
+
+	va_end(ap);
+}}
