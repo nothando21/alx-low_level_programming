@@ -9,7 +9,9 @@ void free_list(list_t *head)
 {
 	/* create tmp node */
 	list_t *tmp;
+
 	while (head != NULL)
+
 	{
 		/* assign head node to tmp node */
 		tmp = head;

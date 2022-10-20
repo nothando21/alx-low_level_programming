@@ -30,7 +30,9 @@ list_t *add_node(list_t **head, const char *str)
 {
 	/* create new list & allocate memory for it */
 	list_t *new = (list_t *)malloc(sizeof(list_t));
+
 	if (new == NULL)
+
 		return (NULL);
 
 	/* assign new data */
