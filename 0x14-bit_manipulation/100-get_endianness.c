@@ -2,15 +2,13 @@
 
 /**
  * get_endianness - checks the endianness
- * Return: 0 if big endian, 1 if little endian
+ * Return: 0 or 1
  */
 
 int get_endianness(void)
 {
-	unsigned int x;
-	char *c;
+	unsigned int x = 1;
+	char *c = (char *) &x;
 
-	x = 1;
-	c = (char *) &x;
-	return ((int)*c);
+	return ((int) *c);
 }
