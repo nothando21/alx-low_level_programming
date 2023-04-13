@@ -1,46 +1,47 @@
 #include "search_algos.h"
 
 /**
- * _search - recursive function to do binary search
- * @array: array to be searched
- * @beg: beginning of array
- * @size: size of array
- * @value: value to be searched
- * Return: -1 else index
+ * print - prints the current index in the array
+ * @array: Pointer to the first element of the array
+ * @lower: Initial lower bound index
+ * @upper: Upper bound index
  */
-int _search(int *array, size_t beg, size_t size, int value)
+void print(int *array, size_t lower, size_t upper)
 {
-	size_t mid, i;
-	char *space;
+	size_t i = 0;
 
-	if (beg >= size)
-		return (-1);
-	mid = beg + (size - beg - 1) / 2;
-	printf("Searching in array:");
-	space = " ";
-	for (i = beg; i < size; i++)
-	{
-		printf("%s%d", space, array[i]);
-		space = ", ";
-	}
-	printf("\n");
-	if (array[mid] == value)
-		return (mid);
-	if (array[mid] > value)
-		return (_search(array, beg, mid, value));
-	return (_search(array, mid + 1, size, value));
+	printf("Searching in array: ");
+	for (i = lower; i < upper; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[upper]);
 }
 
 /**
- * binary_search - recursive function to do binary search
- * @array: array to be searched
- * @size: size of array
- * @value: value to be searched
- * Return: -1 else index
+ * binary_search - This function searches for a value in a sorted array of
+ * integers using the Binary search algorithm
+ * @array: Pointer to the first element of the array
+ * @size: The number of elements in the array
+ * @value: The value to search for
+ * Return: The index where value is located; else -1
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (array == NULL)
-		return (-1);
-	return (_search(array, 0, size, value));
+	size_t lower = 0, upper = size - 1, mid = 0;
+
+	if (array)
+	{
+		while (lower <= upper)
+		{
+			mid = (upper + lower) / 2;
+
+			print(array, lower, upper);
+			if (array[mid] < value)
+				lower = mid + 1;
+			else if (array[mid] > value)
+				upper = mid - 1;
+			else
+				return (mid);
+		}
+	}
+	return (-1);
 }
